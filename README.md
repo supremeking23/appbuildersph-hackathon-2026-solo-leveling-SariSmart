@@ -87,11 +87,14 @@ Open the local URL printed by Vite in your browser.
 
 ### Set up local Ollama
 
-Install Ollama, make sure its service is running, then download the model used by the app:
+Install Ollama, then download and start the model used by the app:
 
 ```bash
 ollama pull qwen2.5:1.5b
+ollama run qwen2.5:1.5b
 ```
+
+Keep the `ollama run` session open while using SariSmart. It starts the model and keeps the local Ollama service available to the app.
 
 The browser must be able to reach `http://localhost:11434`. You can check that the API responds by opening `http://localhost:11434/api/tags` in a browser. The response should include `qwen2.5:1.5b`. Ollama is required for the intended AI-powered workflow; if it is temporarily offline or returns invalid output, the app uses its local rule-based parser for that log.
 
