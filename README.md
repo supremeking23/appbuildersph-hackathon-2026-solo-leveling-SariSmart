@@ -2,6 +2,8 @@
 
 **A local-first inventory logging prototype for sari-sari stores.**
 
+[Try the live demo on GitHub Pages](https://supremeking23.github.io/appbuildersph-hackathon-2026-solo-leveling-SariSmart/)
+
 SariSmart is a browser-based dashboard for recording store activity in everyday Tagalog, Taglish, or English. A merchant can enter a short log such as “Nakabenta ako ng 3 pancit canton” or “Nagdagdag ng 8 Red Horse.” The app uses a local Ollama model to extract transaction details and falls back to a rule-based parser when Ollama is unavailable or returns unusable output. TypeScript then applies the transaction to the inventory held in the browser.
 
 SariSmart is an early v0.1 prototype, not a production point-of-sale system. It does not calculate profit, synchronize data across devices, or guarantee that the app itself can be loaded without an internet connection.
@@ -120,7 +122,7 @@ After creating the GitHub repository:
 3. Open the **Actions** tab and wait for the **Deploy to GitHub Pages** workflow to complete successfully.
 4. Open the Pages URL shown in **Settings → Pages**. For a project site, it is usually `https://OWNER.github.io/REPOSITORY/`.
 
-The hosted page serves the frontend only. Ollama is not hosted by GitHub Pages: AI parsing requires a compatible Ollama service and the `qwen2.5:1.5b` model on the visitor's own device, configured to allow requests from the Pages origin. If the browser cannot reach Ollama, the local rule-based parser is used as a fallback. Inventory and activity data remain local to each visitor's browser.
+The hosted page serves the frontend only. Ollama is not hosted by GitHub Pages: AI parsing requires a compatible Ollama service and the `qwen2.5:1.5b` model on the visitor's own device, configured to allow requests from the Pages origin. If the live demo shows **Rule-based parser**, the browser did not detect or reach a usable local Ollama service, so it is using the fallback. Inventory and activity data remain local to each visitor's browser.
 
 ## Current limitations
 
